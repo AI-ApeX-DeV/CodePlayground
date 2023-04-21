@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Find the Nearest Mental Fitness Therapist</title>
+    <script>
+      function getLocation() {
+        if (navigator.geolocation) {
+          // Use the Geolocation API to get the user's current position
+          navigator.geolocation.getCurrentPosition(showMap);
+        } else {
+          alert("Geolocation is not supported by this browser.");
+        }
+      }
+
+      function showMap(position) {
+        // Display the user's latitude and longitude
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+
+        // Load the Google Maps API and create a map centered on the user's location
+        var script = document.createElement("script");
+        script.src =
+          "https://maps.googleapis.com/maps/api/js?key=AIzaSyDft__DRAFKvpiW8hkJrsvexDGCPldeNpk&callback=initMap";
+        document.head.appendChild(script);
+
+        // Define the initMap function to create a map and show markers for nearby mental fitness therapists
+        window.initMap = function () {
+          var userLocation = new google.maps.LatLng(latitude, longitude);
+          var map = new google.maps.Map(document.getElementById("map"), {
+            center: userLocation,
+            zoom: 14,
+          });
+          var request = {
+            location: userLocation,
+            radius: "5000",
+            type: ["health", "doctor"],
+            keyword: ["mental fitness therapist"],
+          };
+          var service = new google.maps.places.PlacesService(map);
+          service.nearbySearch(request, function (results, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+              for (var i = 0; i < results.length; i++) {
+                var marker = new google.maps.Marker({
+                  position: results[i].geometry.location,
+                  map: map,
+                  title: results[i].name,
+                });
+              }
+            }
+          });
+        };
+      }
+    </script>
+  </head>
+  <body onload="getLocation()">
+    <div id="map" style="height: 500px"></div>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set background color */
+body {
+  background-color: #1c1f25;
+}
+
+/* Set text color */
+body,
+input,
+button {
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header styles */
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 50px;
+}
+
+/* Container styles */
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
+/* User message styles */
+.user {
+  margin-bottom: 20px;
+  text-align: right;
+}
+.user p {
+  background-color: #4169e1;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 60%;
+  display: inline-block;
+  text-align: left;
+}
+
+/* Assistant message styles */
+.assistant {
+  margin-bottom: 20px;
+  text-align: left;
+}
+.assistant p {
+  background-color: #696969;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 60%;
+  display: inline-block;
+  text-align: left;
+}
+
+/* Input styles */
+.input-container {
+  display: flex;
+  margin-top: 50px;
+}
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px 0 0 5px;
+  border: none;
+  font-size: 16px;
+}
+button {
+  padding: 10px 20px;
+  background-color: #008cba;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Media queries */
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  .container {
+    padding: 10px;
+  }
+  .user p,
+  .assistant p {
+    max-width: 100%;
+  }
+  input[type="text"] {
+    font-size: 14px;
+  }
+  button {
+    font-size: 14px;
+  }
+}

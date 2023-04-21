@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chatbot Interface</title>
+    <style>
+      body {
+        background-color: #222;
+        font-family: Arial, sans-serif;
+        color: #fff;
+      }
+
+      .chatbot-container {
+        margin: 20px auto;
+        max-width: 600px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+      }
+
+      .chatbot-header {
+        background-color: #444;
+        padding: 10px;
+        text-align: center;
+        font-size: 24px;
+      }
+
+      .chatbot-messages {
+        padding: 10px;
+        height: 300px;
+        overflow-y: scroll;
+      }
+
+      .chatbot-message {
+        margin: 10px 0px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #666;
+      }
+
+      .chatbot-message.user {
+        background-color: #007bff;
+      }
+
+      .chatbot-input {
+        width: 100%;
+        border: none;
+        background-color: #555;
+        padding: 10px;
+        font-size: 16px;
+        color: #fff;
+        border-radius: 0px;
+      }
+
+      .chatbot-submit {
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .chatbot-submit:hover {
+        background-color: #0062cc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chatbot-container">
+      <div class="chatbot-header">Chatbot</div>
+      <div class="chatbot-messages">
+        <div class="chatbot-message">Hello, how can I help you today?</div>
+        <div class="chatbot-message user">I need help with my order.</div>
+        <div class="chatbot-message">Sure, what's your order number?</div>
+      </div>
+      <input
+        type="text"
+        class="chatbot-input"
+        placeholder="Type your message..."
+      />
+      <button class="chatbot-submit">&#10148;</button>
+    </div>
+  </body>
+</html>

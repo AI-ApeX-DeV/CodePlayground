@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Embedded Game</title>
+    <script
+      type="text/javascript"
+      src="https://api.lumosity.com/api.js"
+    ></script>
+    <script>
+      LUMOSITY.init({
+        game: "memory-matrix",
+        container: "lumosity-container",
+        width: 800,
+        height: 600,
+      });
+    </script>
+  </head>
+  <body>
+    <div id="lumosity-container"></div>
+  </body>
+</html>
