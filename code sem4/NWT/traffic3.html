@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Traffic Signal</title>
+    <style>
+      .signal {
+        width: 70px;
+        height: 200px;
+        border: 1px solid black;
+
+      }
+      .lightt {
+        width: 60px;
+        height: 60px;        
+        border-radius: 50%;
+        margin: 5px ;
+
+      }
+      .red {
+        background-color: black;
+      }
+      .yellow {
+        background-color: black;
+      }
+      .green {
+        background-color: black;
+      }
+      .red.active {
+        background-color: red;
+      }
+      .yellow.active {
+        background-color: yellow;
+      }
+      .green.active {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="signal">
+      <div class="lightt red"></div>
+      <div class="lightt yellow"></div>
+      <div class="lightt green"></div>
+    </div>
+    <script>
+      function changeSignal() {
+        var red = document.querySelector('.red');
+        var yellow = document.querySelector('.yellow');
+        var green = document.querySelector('.green');
+        
+        if (red.classList.contains('active')) {
+          red.classList.remove('active');
+          yellow.classList.add('active');
+        } else if (yellow.classList.contains('active')) {
+          yellow.classList.remove('active');
+          green.classList.add('active');
+        } else {
+          green.classList.remove('active');
+          red.classList.add('active');
+        }
+      }
+      
+      setInterval(changeSignal, 500);
+    </script>
+  </body>
+</html>
